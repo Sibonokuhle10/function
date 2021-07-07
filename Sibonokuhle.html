@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <title>Welcome To Registration Form</title>
+<meta charset="utf-6">
+<meta name="viewport"content="width-device-width,initial-scale="1.0>
+<style>
+    body{
+        float: center;
+        margin-top: 5%;
+        background-color: slategrey;
+        text-align: center;
+    }
+.form{
+    margin-top: 140px;
+    margin-left: 25%;
+    box-sizing: border;
+    width: 50%;
+    height: 40%;
+    text-align: left;
+    color: rgb(7, 6, 6);
+    float: center;
+    font-weight: bolder;
+    background-color: lightslategray;
+    border-radius: 15%;
+
+}
+input[type=text],select,textarea{
+   width: 90%;
+   padding: 5px;
+   border: 5px solid greenyellow;
+   padding-top: 4px;
+   padding-bottom: 10px;    
+   resize: vertical;
+   
+}
+input[type=submit]{
+    background-color: black;
+    color: beige;
+    padding: 5px 50px;
+    border: none;
+    cursor: pointer;
+}
+input[type=submit]:hover{
+    background-color:grey;
+
+}
+
+.tablees{
+    width: 90%;
+   padding: 5px;
+   border: 5px solid greenyellow;
+   padding-top: 4px;
+   padding-bottom: 10px;    
+   resize: vertical;
+}
+td{
+    font-weight: bold;
+    font-style: oblique;
+}
+.btn{
+    background-color: black;
+    color: beige;
+    padding: 5px 50px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 30px;
+    font-weight: bolder;
+}
+.btn:hover{
+    background-color: grey;
+}
+.login{
+    align-content: center;
+    padding-left: 20px;
+    margin-left: 20px;
+}
+.h-tag{
+    text-align: center;
+    font-style: oblique;
+}
+
+</style>
+
+  <script type="text/javascript">
+       function registration()
+    {
+
+        var name= document.getElementById("t1").value;
+        var email= document.getElementById("t2").value;
+        var uname= document.getElementById("t3").value;
+        var pwd= document.getElementById("t4").value;           
+        var cpwd= document.getElementById("t5").value;
+        
+        //email id expression code
+        var pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
+        var letters = /^[A-Za-z]+$/;
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if(name=='')
+        {
+            alert('Please fill blank spaces');
+        }
+        else if(!letters.test(name))
+        {
+            alert('only alphabet characters');
+        }
+        else if(email=='')
+        {
+            alert('Please enter your email address');
+        }
+        else if (!filter.test(email))
+        {
+            alert('Invalid email');
+        }
+        else if(uname=='')
+        {
+            alert('Please enter the user name.');
+        }
+        else if(!letters.test(uname))
+        {
+            alert('only alphabet characters');
+        }
+        else if(pwd=='')
+        {
+            alert('Please enter Password');
+        }
+        else if(cpwd=='')
+        {
+            alert('Confirm Password');
+        }
+        else if(!pwd_expression.test(pwd))
+        {
+            alert ('Upper case, Lower case, Special character and Numeric letter are required in Password filed');
+        }
+        else if(pwd != cpwd)
+        {
+            alert ('Password does not Matche!');
+        }
+        else if(document.getElementById("t5").value.length < 1)
+        {
+            alert ('Password minimum length is 1');
+        }
+        else if(document.getElementById("t5").value.length > 8)
+        {
+            alert ('Password max length is 8');
+        }
+        else
+        {                                           
+               alert('Thank You for Registration & You are Redirecting to Website');
+               window.location = "https://tutorial.eyehunts.com//"; 
+        }
+    }
+  </script>
+  </head>
+
+    <body>
+    <div class="form">
+    <div class="h-tag">
+    <h2>Register Now !</h2>
+    </div>
+    <div class="login">
+    <table cellspacing="2" align="center" cellpadding="8" border="0" class="you">
+    <tr>
+    <td align="right">First Name :</td>
+    <td><input type="text" placeholder="First Name..." id="t1" class="tablees" /></td>
+    </tr>
+    <tr>
+    <td align="right"> Email Address :</td>
+    <td><input type="text" placeholder=" Email Address..." id="t2" class="tablees" /></td>
+    </tr>
+    <tr>
+    <td align="right">Your Username :</td>
+    <td><input type="text" placeholder="Your Username..." id="t3" class="tablees" /></td>
+    </tr>
+    <tr>
+    <td align="right">Create Password :</td>
+    <td><input type="password" placeholder="Create Password..." id="t4" class="tablees" /></td>
+    </tr>
+    <tr>
+    <td align="right">Confirm Password :</td>
+    <td><input type="password" placeholder="Confirm Password..." id="t5" class="tablees" /></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td>
+    <input type="reset" value="Restart" id="res" class="btn" />
+    <input type="submit" value="Lodge Account" class="btn" onclick="registration()" /></td>
+    </tr>
+    </table>
+      </div>
+
+    </div>
+    </body>
+    </html>
